@@ -1,24 +1,27 @@
 import React from "react";
 import apeGif from "../../assets/apeGif.gif";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import closeIcon from "../../assets/google-close.svg";
+import CloseIcon from "./CloseIcon";
 
 const WindowForTwo = ({ state }) => {
   return (
     <motion.div
+      key="manki"
+      initial={{ scale: 0, opacity: 0, y: "0", rotate: 0 }}
       animate={{
-        scale: [0, 1.2, 1],
-        opacity: [0, 1],
+        scale: 1,
+        opacity: 1,
+        y: 0,
+        rotate: 0,
       }}
-      transition={{ delay: 0.1, duration: 0.5, type: "spring" }}
+      exit={{ scale: 0, opacity: 0, y: "0", rotate: 0 }}
+      transition={{ delay: 0.1, duration: 1, type: "spring" }}
       className="absolute h-[400px] w-[400px] bg-white rounded-xl shadow-2xl flex justify-center items-center"
     >
-      <img
-        src={closeIcon}
-        className="w-4 absolute -right-2 -top-2
-         bg-white rounded-full ring-4 ring-sky-200 stroke-cyan-500 hover:w-6 transition-all duration-300  "
-        onClick={() => state(false)}
-      />
+      <div className=" absolute -right-4 -top-4 bg-white p-1 rounded-full ring-4 z-20 ring-sky-200 shadow-xl">
+        <CloseIcon />
+      </div>
       <div className="">
         <img src={apeGif} className=" mx-auto  rounded-lg" />
         <div>

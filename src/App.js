@@ -1,4 +1,5 @@
 import OneCounter from "./components/OneCounter";
+import ExitTest from "./components/TwoModalWindow/ExitTest";
 import TwoModalWindow from "./components/TwoModalWindow/TwoModalWindow";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div>
       {/* <OneCounter /> */}
       <TwoModalWindow />
+      {/* <ExitTest /> */}
     </div>
   );
 }

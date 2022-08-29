@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 import WindowForTwo from "./WindowForTwo";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 const TwoModalWindow = () => {
   const [open, setOpen] = useState(false);
   const click = () => {
     setOpen(true);
   };
 
-  useEffect(()=>{
-    document.addEventListener("mousedown", ()=>{
-      setOpen(false)
-    })
-  },[])
+  useEffect(() => {
+    document.addEventListener("mousedown", () => {
+      setOpen(false);
+    });
+  }, []);
 
   return (
     <div className="h-screen bg-sky-200 flex justify-center items-center">
@@ -25,11 +24,9 @@ const TwoModalWindow = () => {
       >
         ✨Open Window
       </button>
-      {open ? (
-        <AnimatePresence>
-          <WindowForTwo state={setOpen}/>
-        </AnimatePresence>
-      ) : null}
+      <AnimatePresence>
+        {open ? <WindowForTwo state={setOpen} /> : null}
+      </AnimatePresence>
     </div>
   );
 };
