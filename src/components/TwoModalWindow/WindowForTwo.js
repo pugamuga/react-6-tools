@@ -19,7 +19,7 @@ const WindowForTwo = ({ state }) => {
       transition={{ delay: 0.1, duration: 1, type: "spring" }}
       className="absolute h-[400px] w-[400px] bg-white rounded-xl shadow-2xl flex justify-center items-center"
     >
-      <div className=" absolute -right-4 -top-4 bg-white p-1 rounded-full ring-4 z-20 ring-sky-200 shadow-xl">
+      <div className=" absolute -right-4 -top-4 bg-white p-1 rounded-full ring-4 z-20 ring-slate-900 shadow-xl">
         <CloseIcon />
       </div>
       <div className="">

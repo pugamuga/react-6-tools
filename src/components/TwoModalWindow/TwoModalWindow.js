@@ -15,7 +15,11 @@ const TwoModalWindow = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-sky-200 flex justify-center items-center">
+    <div
+      className={`h-screen ${
+        !open ? "bg-sky-200" : "bg-slate-900"
+      } flex justify-center items-center transition-all duration-700`}
+    >
       <button
         onClick={click}
         className="bg-sky-500 w-[200px] h-[50px] rounded-full text-1xl text-white font-bold
