@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const OneCounter = () => {
+const OneCounter = ({state}) => {
+  state(true)
   const [counter, setCounter] = useState(0);
 
   const increase = () => {

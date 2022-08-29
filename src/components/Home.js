@@ -1,8 +1,10 @@
 import React from "react";
 import { buttons } from "../data.js";
 import mountain from "../assets/mountain.png";
+import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ state }) => {
+  state(false);
   return (
     <div className="h-screen bg-sky-200 w-screen ">
       <img src={mountain} className=" absolute bottom-0 opacity-30 grayscale" />
@@ -16,7 +18,8 @@ const Home = () => {
               {buttons.map((item, index) => {
                 const { name, href } = item;
                 return (
-                  <div
+                  <Link
+                    to={href}
                     key={index}
                     className="h-[80px] w-[150px] lg:w-[250px] rounded-md bg-sky-100 flex justify-center cursor-pointer 
                     items-center shadow-md scale-[70%] lg:scale-100 hover:scale-95 hover:opacity-80 active:ring-8 active:scale-90 ring-sky-200"
@@ -24,7 +27,7 @@ const Home = () => {
                     <h1 className="text-3xl font-mono font-extrabold text-sky-700">
                       {name}
                     </h1>
-                  </div>
+                  </Link>
                 );
               })}
             </div>
