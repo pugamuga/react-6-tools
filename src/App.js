@@ -10,7 +10,7 @@ import Zindex from "./components/Three/Zindex";
 function App() {
   return (
     <div>
-      {/* <BackButtom />
+      <BackButtom />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/1lesson" element={<OneCounter />} />
@@ -19,8 +19,8 @@ function App() {
         <Route path="/4lesson" element={<TwoModalWindow />} />
         <Route path="/5lesson" element={<TwoModalWindow />} />
         <Route path="/6lesson" element={<TwoModalWindow />} />
-      </Routes> */}
-      <Zindex/>
+      </Routes>
+      {/* <Zindex/> */}
     </div>
   );
 }

@@ -13,10 +13,8 @@ const Line = ({ line, newPercentState }) => {
   return (
     <div className="flex h-full justify-center items-start">
       <div
-        className={` transition-colors ${
-          color ? "bg-slate-200" : "bg-white"
-        } ${
-          color ? "h-[24px]" : "h-[20px]"
+        className={` transition-colors ${color ? "bg-green-400" : "bg-white"} ${
+          color ? "h-[20px]" : "h-[20px]"
         } w-[640px] rounded-full  flex justify-start items-center px-1 transition-all duration-300`}
       >
         <div
@@ -31,13 +29,7 @@ const Line = ({ line, newPercentState }) => {
           ></div>
         </div>
       </div>
-      {/* <button onClick={newLine} className="bg-slate-300 p-2 ">
-        +10
-      </button> */}
     </div>
-    // <div className="w-full bg-gray-200 rounded-full h-2.5">
-    //   <div className="bg-blue-600 h-2.5 rounded-full" style={{width: `51%`}}></div>
-    // </div>
   );
 };
 
