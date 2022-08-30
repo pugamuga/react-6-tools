@@ -2,9 +2,9 @@ import React from "react";
 import { buttons } from "../data.js";
 import mountain from "../assets/mountain.png";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Home = ({ state }) => {
-  state(false);
+const Home = () => {
   return (
     <div className="h-screen bg-sky-200 w-screen ">
       <img src={mountain} className=" absolute bottom-0 opacity-30 grayscale" />
@@ -18,16 +18,22 @@ const Home = ({ state }) => {
               {buttons.map((item, index) => {
                 const { name, href } = item;
                 return (
-                  <Link
-                    to={href}
+                  <motion.div
                     key={index}
-                    className="h-[80px] w-[150px] lg:w-[250px] rounded-md bg-sky-100 flex justify-center cursor-pointer 
-                    items-center shadow-md scale-[70%] lg:scale-100 hover:scale-95 hover:opacity-80 active:ring-8 active:scale-90 ring-sky-200"
+                    initial={{ opacity: 0, y: -100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: (index + 1) * 0.2, type: "spring" }}
                   >
-                    <h1 className="text-3xl font-mono font-extrabold text-sky-700">
-                      {name}
-                    </h1>
-                  </Link>
+                    <Link
+                      to={href}
+                      className="h-[80px] w-[150px] lg:w-[250px] rounded-md bg-sky-100 flex justify-center cursor-pointer 
+                    items-center shadow-md scale-[70%] lg:scale-100 hover:scale-95 hover:opacity-80 active:ring-8 active:scale-90 ring-sky-200"
+                    >
+                      <h1 className="text-3xl font-mono font-extrabold text-sky-700">
+                        {name}
+                      </h1>
+                    </Link>
+                  </motion.div>
                 );
               })}
             </div>

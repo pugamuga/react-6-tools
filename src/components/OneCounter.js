@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const OneCounter = ({state}) => {
-  state(true)
+const OneCounter = () => {
   const [counter, setCounter] = useState(0);
 
   const increase = () => {
@@ -14,8 +13,8 @@ const OneCounter = ({state}) => {
     }
   };
   return (
-    <div className="h-screen bg-sky-900 flex justify-center items-center">
-      <div className="container max-w-[450px] text-center">
+    <div className="h-screen bg-indigo-300 flex justify-center items-center">
+      <div className="container max-w-[450px] text-center  scale-75 lg:scale-100">
         <p className="text-5xl font-serif font-bold text-white mb-8">Counter</p>
         <div className="flex justify-between items-center relative">
           <button

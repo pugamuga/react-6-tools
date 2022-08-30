@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import WindowForTwo from "./WindowForTwo";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TwoModalWindow = ({state}) => {
-  state(true)
+const TwoModalWindow = () => {
+  
   const [open, setOpen] = useState(false);
   const click = () => {
     setOpen(true);

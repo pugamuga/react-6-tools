@@ -1,23 +1,23 @@
 import Home from "./components/Home";
 import OneCounter from "./components/OneCounter";
 import TwoModalWindow from "./components/TwoModalWindow/TwoModalWindow";
+import Quiz from "./components/Three/Quiz";
 import { Route, Routes } from "react-router-dom";
 import BackButtom from "./components/BackButtom";
 import { useState } from "react";
 
 function App() {
-  const [back, setBack] = useState(false);
   return (
     <div>
-      {back && <BackButtom />}
+      <BackButtom />
       <Routes>
-        <Route path="/" element={<Home state={setBack} />} />
-        <Route path="/1lesson" element={<OneCounter state={setBack} />} />
-        <Route path="/2lesson" element={<TwoModalWindow state={setBack} />} />
-        <Route path="/3lesson" element={<TwoModalWindow state={setBack} />} />
-        <Route path="/4lesson" element={<TwoModalWindow state={setBack} />} />
-        <Route path="/5lesson" element={<TwoModalWindow state={setBack} />} />
-        <Route path="/6lesson" element={<TwoModalWindow state={setBack} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/1lesson" element={<OneCounter />} />
+        <Route path="/2lesson" element={<TwoModalWindow />} />
+        <Route path="/3lesson" element={<Quiz />} />
+        <Route path="/4lesson" element={<TwoModalWindow />} />
+        <Route path="/5lesson" element={<TwoModalWindow />} />
+        <Route path="/6lesson" element={<TwoModalWindow />} />
       </Routes>
     </div>
   );
