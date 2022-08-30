@@ -5,11 +5,12 @@ import Quiz from "./components/Three/Quiz";
 import { Route, Routes } from "react-router-dom";
 import BackButtom from "./components/BackButtom";
 import { useState } from "react";
+import Zindex from "./components/Three/Zindex";
 
 function App() {
   return (
     <div>
-      <BackButtom />
+      {/* <BackButtom />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/1lesson" element={<OneCounter />} />
@@ -18,7 +19,8 @@ function App() {
         <Route path="/4lesson" element={<TwoModalWindow />} />
         <Route path="/5lesson" element={<TwoModalWindow />} />
         <Route path="/6lesson" element={<TwoModalWindow />} />
-      </Routes>
+      </Routes> */}
+      <Zindex/>
     </div>
   );
 }

@@ -14,7 +14,7 @@ const Line = ({ line, newPercentState }) => {
     <div className="flex h-full justify-center items-start">
       <div
         className={` transition-colors ${
-          color ? "bg-slate-400" : "bg-slate-300"
+          color ? "bg-slate-200" : "bg-white"
         } ${
           color ? "h-[24px]" : "h-[20px]"
         } w-[640px] rounded-full  flex justify-start items-center px-1 transition-all duration-300`}
