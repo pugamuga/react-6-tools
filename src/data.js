@@ -27,21 +27,24 @@ export const buttons = [
 
 export const quizData = [
   {
-    question: "loremloremlorem1",
-    a1: "loremloremloremloremloremloremlorem1",
-    a2: "loremloremloremloremloremloremlorem2",
-    a3: "loremloremloremloremloremloremlorem3",
+    question: "MEV it's ...",
+    a1: "manki elegant victory",
+    a2: "miners extractable value",
+    a3: "mercedes environment vision",
+    correct: 1
   },
   {
-    question: "loremloremlorem2",
-    a1: "loremloremloremloremloremloremlorem1",
-    a2: "loremloremloremloremloremloremlorem2",
-    a3: "loremloremloremloremloremloremlorem3",
+    question: "Vitalik Buterin is ...",
+    a1: "ethereum founder",
+    a2: "greatest programmer",
+    a3: "chert galimii",
+    correct: 3
   },
   {
-    question: "loremloremlorem3",
-    a1: "loremloremloremloremloremloremlorem1",
-    a2: "loremloremloremloremloremloremlorem2",
-    a3: "loremloremloremloremloremloremlorem3",
+    question: "Chingon is ..,",
+    a1: "Stupid",
+    a2: "Genius",
+    a3: "50/50",
+    correct: 3
   },
 ];
