@@ -31,16 +31,16 @@ const Quiz = () => {
         <motion.div
           animate={{ scale: [0, 1, 0.9], opacity: [0, 1] }}
           transition={{ duration: 0.6, type: "spring", delay: 0.7 }}
-          className=" absolute z-50 "
+          className=" absolute z-40 "
         >
           <Final errorCounter={errorCounter} />
         </motion.div>
       )}
       {quizData.length > 0 ? null : (
         <motion.div
-          animate={{ scale: [1, 1], opacity: [0, 1], y: [-400, -200, -220] }}
+          animate={{ scale: [1, 1], opacity: [0, 1], y: [-400, -220, -250] }}
           transition={{ duration: 0.6, type: "spring", delay: 0.7 }}
-          className=" absolute z-40 "
+          className=" absolute z-50 "
         >
           <ReloadBtn />
         </motion.div>
