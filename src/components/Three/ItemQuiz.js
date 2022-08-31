@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Line from "./Line";
 import { quizData } from "../../data.js";
+import { motion } from "framer-motion";
 
 const ItemQuiz = ({ question, a1, a2, a3, correct }) => {
   const [one, setOne] = useState(false);
@@ -16,7 +17,11 @@ const ItemQuiz = ({ question, a1, a2, a3, correct }) => {
         className=" bg-white h-[290px] w-[490px] rounded-md shadow-xl p-2 z-30 absolute left-0 right-0 mr-auto ml-auto
   top-0 bottom-0 mt-auto mb-auto"
       >
-        <div className="flex justify-between mx-8 items-center py-4">
+        <motion.div
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="flex justify-between mx-8 items-center py-4"
+        >
           <h1 className="text-3xl font-extrabold">{question}</h1>
           <button
             className=" active:grayscale-0 hover:grayscale-0 grayscale bg-gradient-to-r from-pink-500 to-violet-600 px-5 py-3  shadow-md hover:shadow-lg active:shadow-none
@@ -24,8 +29,12 @@ const ItemQuiz = ({ question, a1, a2, a3, correct }) => {
           >
             Next
           </button>
-        </div>
-        <ul className={`flex flex-col items-center gap-y-4 mt-5`}>
+        </motion.div>
+        <motion.ul
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className={`flex flex-col items-center gap-y-4 mt-5`}
+        >
           <li
             className={`${classNameA}${one ? "bg-green-500" : null}${
               oneFalse ? "bg-rose-500" : null
@@ -68,7 +77,7 @@ const ItemQuiz = ({ question, a1, a2, a3, correct }) => {
           >
             <p>{a3}</p>
           </li>
-        </ul>
+        </motion.ul>
         {console.log(one)}
         {console.log(two)}
         {console.log(three)}
