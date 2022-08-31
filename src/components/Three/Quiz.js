@@ -101,3 +101,4 @@ const Quiz = () => {
   );
 };
 export default Quiz;
+// main component
