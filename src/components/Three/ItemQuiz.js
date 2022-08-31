@@ -3,15 +3,25 @@ import Line from "./Line";
 import { quizData } from "../../data.js";
 import { motion } from "framer-motion";
 
-const ItemQuiz = ({ question, a1, a2, a3, correct, next, setNext }) => {
+const ItemQuiz = ({
+  question,
+  a1,
+  a2,
+  a3,
+  correct,
+  next,
+  setNext,
+  length,
+  setLength,
+  errorCounter,
+  setErrorCounter,
+}) => {
   const [one, setOne] = useState(false);
   const [two, setTwo] = useState(false);
   const [three, setThree] = useState(false);
   const [oneFalse, setOneFalse] = useState(false);
   const [twoFalse, setTwoFalse] = useState(false);
   const [threeFalse, setThreeFalse] = useState(false);
-
-  const [errorCounter, setErrorCounter] = useState(0);
 
   const [btnVisible, setBtnVisible] = useState(false);
 
@@ -41,10 +51,21 @@ const ItemQuiz = ({ question, a1, a2, a3, correct, next, setNext }) => {
             >
               <button
                 onClick={() => {
-                  setNext(true);
-                  setTimeout(() => {
-                    setNext(false);
-                  }, 2000);
+                  setLength(Math.round(length + (100 / 3)));
+                  quizData.shift();
+
+                  setExecutedOne(true);
+                  setExecutedTwo(true);
+                  setExecutedThree(true);
+
+                  setOne(false);
+                  setTwo(false);
+                  setThree(false);
+                  setOneFalse(false);
+                  setTwoFalse(false);
+                  setThreeFalse(false);
+                  setBtnVisible(false);
+
                 }}
                 className=" active:grayscale-0 hover:grayscale-0 grayscale bg-gradient-to-r from-pink-500 to-violet-600 px-5 py-[10px]  shadow-md hover:shadow-lg active:shadow-none
            hover:scale-110 active:scale-90 rounded-lg text-white font-semibold text-xs transition-all duration-100 hover:opacity-80"
@@ -142,7 +163,6 @@ const ItemQuiz = ({ question, a1, a2, a3, correct, next, setNext }) => {
             <p>{a3}</p>
           </li>
         </motion.ul>
-        {console.log(errorCounter)}
       </div>
     </div>
   );

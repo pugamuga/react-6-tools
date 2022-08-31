@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 
-const Line = ({ line, newPercentState }) => {
+const Line = ({ length }) => {
   const [color, setColor] = useState(false);
-  const [percent, setPercent] = useState(line);
-  const newLine = async () => {
-    setPercent(newPercentState);
-    setColor(true);
-    await setTimeout(() => {
-      setColor(false);
-    }, 300);
-  };
+  const [percent, setPercent] = useState(length);
   return (
     <div className="flex h-full justify-center items-start">
       <div
@@ -20,7 +13,7 @@ const Line = ({ line, newPercentState }) => {
         <div
           className={` bg-gradient-to-r from-green-400 to-cyan-500 h-[12px] rounded-full 
           flex justify-end items-center transition-all duration-300 ease-out z-10`}
-          style={{ width: `${percent}%` }}
+          style={{ width: `${length}%` }}
         >
           <div
             className={`${
