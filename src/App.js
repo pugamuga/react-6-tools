@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import BackButtom from "./components/BackButtom";
 import { useState } from "react";
 import Zindex from "./components/Three/Zindex";
+import MainFour from "./components/Four/MainFour";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/1lesson" element={<OneCounter />} />
         <Route path="/2lesson" element={<TwoModalWindow />} />
         <Route path="/3lesson" element={<Quiz />} />
-        <Route path="/4lesson" element={<TwoModalWindow />} />
+        <Route path="/4lesson" element={<MainFour />} />
         <Route path="/5lesson" element={<TwoModalWindow />} />
         <Route path="/6lesson" element={<TwoModalWindow />} />
       </Routes>
