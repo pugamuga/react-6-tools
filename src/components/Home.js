@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Home = () => {
   return (
-    <div className="h-screen bg-sky-200 w-screen ">
+    <div className="h-screen bg-gradient-to-t from-slate-400 to-sky-300 w-screen ">
       <img src={mountain} className=" absolute bottom-0 opacity-30 grayscale" />
       <div className=" absolute right-0 left-0 mr-auto ml-auto">
         <h1 className=" text-center py-20 text-5xl font-extrabold text-sky-700 z-10">

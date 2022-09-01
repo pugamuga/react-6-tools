@@ -7,6 +7,7 @@ import BackButtom from "./components/BackButtom";
 import { useState } from "react";
 import Zindex from "./components/Three/Zindex";
 import MainFour from "./components/Four/MainFour";
+import Exchange from "./components/Five/Exchange";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/2lesson" element={<TwoModalWindow />} />
         <Route path="/3lesson" element={<Quiz />} />
         <Route path="/4lesson" element={<MainFour />} />
-        <Route path="/5lesson" element={<TwoModalWindow />} />
+        <Route path="/5lesson" element={<Exchange/>} />
         <Route path="/6lesson" element={<TwoModalWindow />} />
       </Routes>
       {/* <Zindex/> */}
