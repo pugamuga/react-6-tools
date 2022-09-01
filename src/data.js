@@ -1,5 +1,5 @@
 import apeOne from "../src/assets/gifOne.gif";
-import apeTwo from "../src/assets/gifTwo.gif"
+import apeTwo from "../src/assets/gifTwo.gif";
 import apeThree from "../src/assets/gifThree.gif";
 import apeFour from "../src/assets/gifFour.webp";
 
@@ -32,21 +32,21 @@ export const buttons = [
 
 export const quizData = [
   {
-    question: "MEV it's ...",
+    question: "MEV it's ",
     a1: "manki elegant victory",
     a2: "miners extractable value",
     a3: "mercedes environment vision",
     correct: 1,
   },
   {
-    question: "Vitalik Buterin is ...",
+    question: "Vitalik Buterin is",
     a1: "ethereum founder",
     a2: "greatest programmer",
     a3: "chert galimii",
     correct: 3,
   },
   {
-    question: "Chingon is ...",
+    question: "Chingon is",
     a1: "Stupid",
     a2: "Genius",
     a3: "50/50",

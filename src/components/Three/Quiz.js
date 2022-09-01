@@ -45,46 +45,43 @@ const Quiz = () => {
           <ReloadBtn />
         </motion.div>
       )}
-      <div className="">
-        <AnimatePresence>
-          {quizData.map((item, index) => {
-            const { question, a1, a2, a3, correct } = item;
-            return (
-              <motion.div
-                key={index}
-                animate={{
-                  y: [100, 0],
-                  opacity: [0, 1],
-                  scale: [1 - 0.05 * index, 1 - 0.05 * index],
-                }}
-                transition={{
-                  duration: 1,
-                  ease: "easeInOut",
-                  delay: 0 + index * 0.3,
-                }}
-                exit={{ y: [0, 100], opacity: [1, 0] }}
-                className={`relative  top-[${400 + 20 * index}px] z-[${
-                  3 - index
-                }]`}
-              >
-                <ItemQuiz
-                  errorCounter={errorCounter}
-                  setErrorCounter={setErrorCounter}
-                  length={length}
-                  setLength={setLength}
-                  next={next}
-                  setNext={setNext}
-                  correct={correct}
-                  question={question}
-                  a1={a1}
-                  a2={a2}
-                  a3={a3}
-                />
-              </motion.div>
-            );
-          })}
-        </AnimatePresence>
-      </div>
+      <AnimatePresence>
+        {quizData.map((item, index) => {
+          const { question, a1, a2, a3, correct } = item;
+          return (
+            <motion.div
+              key={index}
+              animate={{
+                y: [100, 0],
+                opacity: [0, 1],
+                scale: [1 - 0.05 * index, 1 - 0.05 * index],
+              }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+                delay: 0 + index * 0.3,
+              }}
+              exit={{ y: [0, 100], opacity: [1, 0] }}
+              className={`relative `}
+              style={{ top: `${400 + 20 * index}px`, zIndex: `${10 - index}` }}
+            >
+              <ItemQuiz
+                errorCounter={errorCounter}
+                setErrorCounter={setErrorCounter}
+                length={length}
+                setLength={setLength}
+                next={next}
+                setNext={setNext}
+                correct={correct}
+                question={question}
+                a1={a1}
+                a2={a2}
+                a3={a3}
+              />
+            </motion.div>
+          );
+        })}
+      </AnimatePresence>
       <motion.div
         animate={
           quizData.length > 0
@@ -101,4 +98,3 @@ const Quiz = () => {
   );
 };
 export default Quiz;
-// main component
