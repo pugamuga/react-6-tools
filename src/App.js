@@ -8,6 +8,7 @@ import { useState } from "react";
 import Zindex from "./components/Three/Zindex";
 import MainFour from "./components/Four/MainFour";
 import Exchange from "./components/Five/Exchange";
+import FotoCollection from "./components/Six/FotoCollection";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path="/3lesson" element={<Quiz />} />
         <Route path="/4lesson" element={<MainFour />} />
         <Route path="/5lesson" element={<Exchange/>} />
-        <Route path="/6lesson" element={<TwoModalWindow />} />
+        <Route path="/6lesson" element={<FotoCollection/>} />
       </Routes>
       {/* <Zindex/> */}
     </div>

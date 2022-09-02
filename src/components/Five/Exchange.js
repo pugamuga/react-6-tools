@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Exchange = () => {
   const [fromCurrency, setFromCurrency] = useState("RUB");
-  const [toCurrency, setToCurrency] = useState("RUB");
+  const [toCurrency, setToCurrency] = useState("USD");
   const [fromPrice, setFromPrice] = useState("");
   const [toPrice, setToPrice] = useState("");
 

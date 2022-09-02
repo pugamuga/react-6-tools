@@ -25,11 +25,12 @@ const MainFour = () => {
       .then((json) => {
         setUsers(json.data);
         console.log(json.data);
+        setSkeleton(false);
       })
       .catch((error) => {
         console.log(error);
-      })
-      .finally(setSkeleton(false));
+        setSkeleton(true);
+      });
   }, []);
 
   const [search, setSearch] = useState("");
