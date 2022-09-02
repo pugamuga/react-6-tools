@@ -3,6 +3,11 @@ import apeTwo from "../src/assets/gifTwo.gif";
 import apeThree from "../src/assets/gifThree.gif";
 import apeFour from "../src/assets/gifFour.webp";
 
+import ru from "../src/assets/rus.webp";
+import usa from "../src/assets/usa.png";
+import eu from "../src/assets/eu.png";
+import gbr from "../src/assets/gbr.png";
+
 export const buttons = [
   {
     name: "1",
@@ -79,4 +84,11 @@ export const mistakes = [
     className: "text-3xl font-extrabold text-rose-700",
     ape: apeOne,
   },
+];
+
+export const currencyData = [
+  { cur: "RUB", country: ru },
+  { cur: "USD", country: usa },
+  { cur: "EUR", country: eu },
+  { cur: "GBP", country: gbr },
 ];
