@@ -30,7 +30,7 @@ const MainFour = () => {
       .catch((error) => {
         console.log(error);
         setSkeleton(true);
-      });
+      }).finally(false)
   }, []);
 
   const [search, setSearch] = useState("");

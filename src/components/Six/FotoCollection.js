@@ -1,43 +1,82 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Search from "../Four/Search.js";
+import PhotoCard from "./PhotoCard.js";
+import { photoData, categories } from "./dataSix.js";
 
 const FotoCollection = () => {
+  const [page, setPage] = useState(1);
+  const [categoryId, setCategoryId] = useState(0);
+  const [input, setInput] = useState("");
+
+  const pagesAmount = Math.ceil(photoData.length / 3);
+  console.log(pagesAmount);
+  const fake = [...Array(pagesAmount)];
+  console.log(fake.length);
+
   return (
-    <div className="bg-violet-100 h-screen w-screen flex justify-center items-center">
-      <div className="container w-3/4 h-[90%] flex flex-col">
+    <div className="bg-violet-100 h-full w-full flex justify-center items-center">
+      <div className="lg:container w-[90%] lg:w-3/4 flex flex-col my-12 ">
         <h1 className="text-4xl py-4">My photo collection</h1>
-        <div className="flex justify-between py-4 items-center ">
-          <div className="flex gap-x-2" id="buttons ">
-            <button className="bg-white py-2 px-4 rounded-md">All</button>
-            <button className="bg-white py-2 px-4 rounded-md">Mountain</button>
-            <button className="bg-white py-2 px-4 rounded-md">Buildins</button>
-            <button className="bg-white py-2 px-4 rounded-md">City</button>
-            <button className="bg-white py-2 px-4 rounded-md">Sea</button>
+        <div className="lg:flex lg:justify-between py-4 lg:items-center ">
+          <div
+            className="flex gap-x-2 scale-75 lg:scale-100 mr-[290px] lg:mr-0 "
+            id="buttons "
+          >
+            {categories.map((item, index) => {
+              return (
+                <button
+                  onClick={() => {
+                    setCategoryId(index);
+                  }}
+                  key={index}
+                  className={`${
+                    categoryId == index ? "bg-black text-white" : "bg-white"
+                  } py-2  transition-all duration-300 px-4 rounded-md`}
+                >
+                  {item.name}
+                </button>
+              );
+            })}
           </div>
           <input
-            className="w-full max-w-[400px] p-2 mx-2 rounded-md px-4 outline-none"
+            onChange={(e) => setInput(e.target.value)}
+            value={input}
+            className="w-full lg:mt-0 mt-4 max-w-[315px]  lg:max-w-[400px] p-2 mx-2 rounded-md px-4 outline-none"
             placeholder={`Search by name...`}
             type="text"
           />
         </div>
-        <div className="bg-white h-1/2 w-1/3 my-12 hover:shadow-xl hover:ring-2 ring-violet-200 rounded-md shadow-md min-w-[300px] p-4 flex flex-col gap-y-2">
-          <div className="bg-slate-100 w-full h-full rounded-md" id="big"></div>
-          <div
-            className="  w-full h-full flex justify-between gap-x-2"
-            id="small"
-          >
-            <div className="bg-slate-300 w-full rounded-md"></div>
-            <div className="bg-slate-300 w-full rounded-md"></div>
-            <div className="bg-slate-300 w-full rounded-md"></div>
-          </div>
-          <div id="name">
-            <h1>Category</h1>
-          </div>
+        {/* {--------------------------------------} */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 my-12 mx-auto gap-x-24">
+          {photoData
+            .filter((item) => {
+              return item.name.toLowerCase().includes(input.toLowerCase());
+            })
+            .filter((item, index) => {
+              return item.category == categoryId || categoryId == 0;
+            })
+            .map((item, index) => {
+              return (
+                <PhotoCard
+                  key={index}
+                  name={item.name}
+                  photos={item.photos}
+                  category={item.category}
+                />
+              );
+            })}
         </div>
+        {/* {--------------------------------------} */}
         <div className="flex justify-start items-center gap-x-2" id="pages">
-          <button className="w-12 h-12 bg-white rounded-md">1</button>
-          <button className="w-12 h-12 bg-white rounded-md">2</button>
-          <button className="w-12 h-12 bg-white rounded-md">3</button>
+          {fake.map((item, index) => {
+            return (
+              <button
+              onClick={()=>setPage(index+1)}
+              key={index} className={`w-12 h-12 transition-all duration-200 bg-white ${page == index+1?"bg-black text-white":"bg-white"} rounded-md`}>
+                {index+1}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
