@@ -1,9 +1,16 @@
 import React from "react";
 import { currencyData } from "../../data";
+import DeleteIcon from "./DeleteIcon";
 
-const To = ({ color, onChangeCurrency, value, onChangeToPrice }) => {
+const To = ({
+  color,
+  onChangeCurrency,
+  toPrice,
+  onChangeToPrice,
+  setToPrice,
+}) => {
   return (
-    <div className="w-1/2 flex flex-col h-full justify-between p-4">
+    <div className="w-1/2 flex flex-col h-full justify-between p-4 relative">
       <div className="grid grid-cols-4 gap-x-1 text-center h-1/5 items-center cursor-pointer text-slate-700">
         {currencyData.map((item, index) => {
           return (
@@ -31,12 +38,20 @@ const To = ({ color, onChangeCurrency, value, onChangeToPrice }) => {
         })}
       </div>
       <input
-      placeholder="0"
-        value={value}
-        onChange={onChangeToPrice}
+        placeholder="0"
+        onChange={(e) => onChangeToPrice(e.target.value)}
+        value={toPrice}
         type="text"
         className="bg-indigo-200 h-3/5 rounded-md text-[60px] px-8 "
       />
+      <button
+        onClick={() => {
+          setToPrice("");
+        }}
+        className=" absolute right-5 bottom-5"
+      >
+        <DeleteIcon />
+      </button>
     </div>
   );
 };

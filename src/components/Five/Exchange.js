@@ -11,28 +11,31 @@ const Exchange = () => {
 
   const [rates, setRates] = useState({});
 
+  const onChangeToPrice = (value) => {
+    const result = (rates[fromCurrency] / rates[toCurrency]) * value;
+    setFromPrice(result.toFixed(2));
+    setToPrice(value);
+  };
   const onChangeFromPrice = (value) => {
     const price = value / rates[fromCurrency];
     const result = price * rates[toCurrency];
-    setToPrice(result);
+    setToPrice(result.toFixed(2));
     setFromPrice(value);
-  };
-  const onChangeToPrice = (value) => {
-    const result = (rates[fromCurrency] / rates[toCurrency]) * value;
-    setFromPrice(result);
-    setToPrice(value);
   };
 
   useEffect(() => {
     onChangeFromPrice(fromPrice);
-  }, [fromCurrency, fromPrice]);
+  }, [fromCurrency]);
+
+  useEffect(() => {
+    onChangeToPrice(toPrice);
+  }, [toCurrency]);
 
   useEffect(() => {
     fetch("https://cdn.cur.su/api/latest.json")
       .then((res) => res.json())
       .then((json) => {
         setRates(json.rates);
-        console.log(json.rates);
       })
       .catch((error) => {
         console.log(error);
@@ -41,18 +44,20 @@ const Exchange = () => {
 
   return (
     <div className="flex justify-center h-screen bg-indigo-300">
-      <div className="bg-white rounded-xl w-[800px] h-[240px] mt-[100px] shadow-md">
+      <div className="bg-white rounded-xl w-[820px] h-[240px] mt-[100px] shadow-md">
         <div className="conteiner flex w-full h-full p-4 ">
           <From
+          setFromPrice={setFromPrice}
             color={fromCurrency}
             onChangeCurrency={setFromCurrency}
-            value={fromPrice}
+            fromPrice={fromPrice}
             onChangeFromPrice={onChangeFromPrice}
           />
           <To
+          setToPrice={setToPrice}
             color={toCurrency}
             onChangeCurrency={setToCurrency}
-            value={toPrice}
+            toPrice={toPrice}
             onChangeToPrice={onChangeToPrice}
           />
         </div>
