@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-6-tools/static/css/main.cd842ad7.css",
+    "main.js": "/react-6-tools/static/js/main.4ab44088.js",
+    "static/media/gifTwo.gif": "/react-6-tools/static/media/gifTwo.a185872a02db90f7b6d6.gif",
+    "static/media/gifOne.gif": "/react-6-tools/static/media/gifOne.5001cb47c76c8052ff7a.gif",
+    "static/media/apeGif.gif": "/react-6-tools/static/media/apeGif.21d576e55432e749ac2b.gif",
+    "static/media/gifThree.gif": "/react-6-tools/static/media/gifThree.df626da00ea9a50782b6.gif",
+    "static/media/gifFour.webp": "/react-6-tools/static/media/gifFour.b92749c053a27bfb39ae.webp",
+    "static/media/mountain.png": "/react-6-tools/static/media/mountain.439db854b572035ed978.png",
+    "static/media/apeJump.png": "/react-6-tools/static/media/apeJump.2f46467d2ee9dce7a604.png",
+    "static/media/eu.png": "/react-6-tools/static/media/eu.6c280f3bc8fb0f8bdb92.png",
+    "index.html": "/react-6-tools/index.html",
+    "static/media/google-close.svg": "/react-6-tools/static/media/google-close.08233535a9321b39bf5f4a13e34fede0.svg",
+    "static/media/rus.webp": "/react-6-tools/static/media/rus.22331ed29236fd8ad99f.webp",
+    "main.cd842ad7.css.map": "/react-6-tools/static/css/main.cd842ad7.css.map",
+    "main.4ab44088.js.map": "/react-6-tools/static/js/main.4ab44088.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd842ad7.css",
+    "static/js/main.4ab44088.js"
+  ]
+}
