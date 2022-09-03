@@ -15,7 +15,7 @@ function App() {
     <div>
       <BackButtom />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/react-6-tools" element={<Home />} />
         <Route path="/1lesson" element={<OneCounter />} />
         <Route path="/2lesson" element={<TwoModalWindow />} />
         <Route path="/3lesson" element={<Quiz />} />
